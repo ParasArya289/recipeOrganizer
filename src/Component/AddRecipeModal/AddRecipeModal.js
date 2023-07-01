@@ -4,7 +4,7 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import { useData } from "../../Context/dataContext";
 
 const AddRecipeModal = ({ children }) => {
-  const [open,setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const { addRecipe } = useData();
   const formRef = useRef();
 
@@ -13,7 +13,11 @@ const AddRecipeModal = ({ children }) => {
     const formdata = new FormData(formRef.current);
     const obj = {};
     for (const [key, value] of formdata.entries()) {
-      obj[key] = value;
+      if (key === "ingredients" || key === "instructions") {
+        obj[key] = value.split(",");
+      } else {
+        obj[key] = value;
+      }
     }
     addRecipe(obj);
     setOpen(false);
@@ -76,7 +80,7 @@ const AddRecipeModal = ({ children }) => {
               </label>
               <input
                 className="Input"
-                id="instructions"
+                name="instructions"
                 placeholder="Instructions ',' separated"
               />
             </fieldset>

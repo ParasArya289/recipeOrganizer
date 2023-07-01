@@ -1,9 +1,13 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Home } from './Pages/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>This is Machine Coding Round 5</h1>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,26 @@
+.filterbar {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  color: var(--primary-text-color);
+  font-size: medium;
+}
+.filterbar-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color:tomato;
+}
+.filterbar-search > input {
+  appearance: none;
+  outline: none;
+  border: none;
+  color: var(--primary-text-color);
+  border-right: 1px solid var(--primary-text-color);
+}
+.filterbar-radio > label {
+    margin-left: 10px;
+    font-size:small;
+}

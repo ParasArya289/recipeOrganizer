@@ -4,7 +4,7 @@ import { recipes } from "../db";
 const dataContext = createContext();
 
 export const DataContextProvider = ({ children }) => {
-  const [data, setData] = useState([...recipes]);
+  const [data, setData] = useState();
 
   useEffect(() => {
     const retrievedRecipes = JSON.parse(localStorage.getItem("recipe"));
@@ -12,21 +12,36 @@ export const DataContextProvider = ({ children }) => {
       setData(retrievedRecipes);
       return;
     }
+    setData([...recipes]);
   }, []);
+
   const addRecipe = (recipe) => {
-    setData((prev) => [...prev, recipe]);
-    localStorage.setItem("recipe", JSON.stringify(data));
+    setData((prev) => {
+      const arr = [...prev, recipe];
+      localStorage.setItem("recipe", JSON.stringify(arr));
+      return arr;
+    });
   };
-  const EditRecipe = (id, recipe) => {
-    // setData((prev) => [...prev, recipe]);
+
+  const EditRecipe = (ID, newRecipe) => {
+    setData((prev) => {
+      const arr = prev.map((recipe) => (recipe.id === ID ? newRecipe : recipe));
+      localStorage.setItem("recipe", JSON.stringify(arr));
+      return arr;
+    });
   };
-  const deleteRecipe = (id) => {
-    setData((prev) => prev.filter(({ name }) => name !== id));
-    localStorage.setItem("recipe", JSON.stringify(data));
+  const deleteRecipe = (ID) => {
+    setData((prev) => {
+      const arr = prev.filter(({ id }) => id !== ID);
+      localStorage.setItem("recipe", JSON.stringify(arr));
+      return arr;
+    });
   };
 
   return (
-    <dataContext.Provider value={{ data, setData, addRecipe, deleteRecipe }}>
+    <dataContext.Provider
+      value={{ data, setData, addRecipe, deleteRecipe, EditRecipe }}
+    >
       {children}
     </dataContext.Provider>
   );

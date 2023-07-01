@@ -1,5 +1,6 @@
 export const recipes = [
   {
+    id: 1,
     name: "Classic Cheeseburger",
     type: "American",
     image: "https://example.com/american.jpg",
@@ -20,6 +21,7 @@ export const recipes = [
     ],
   },
   {
+    id: 2,
     name: "Spaghetti Aglio e Olio",
     type: "Italian",
     image: "https://example.com/italian.jpg",
@@ -42,6 +44,7 @@ export const recipes = [
     ],
   },
   {
+    id: 3,
     name: "Sweet and Sour Chicken",
     type: "Chinese",
     image: "https://example.com/chinese.jpg",
@@ -67,6 +70,7 @@ export const recipes = [
     ],
   },
   {
+    id: 4,
     name: "Butter Chicken",
     type: "Indian",
     image: "https://example.com/indian.jpg",

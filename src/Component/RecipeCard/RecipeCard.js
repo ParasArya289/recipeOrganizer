@@ -4,10 +4,15 @@ import {
   Pencil1Icon,
 } from "@radix-ui/react-icons";
 import { Link } from "react-router-dom";
+import { useData } from "../../Context/dataContext";
 import EditModal from "../EditModal/EditModal";
 import "./RecipeCard.css";
 
 export const RecipeCard = ({ recipe }) => {
+  const {deleteRecipe}  = useData();
+  const deleteRecipeHandler = () => {
+    deleteRecipe(recipe?.id)
+  }
   return (
     <div className="recipecard">
       <div className="recipecard-header">
@@ -17,7 +22,7 @@ export const RecipeCard = ({ recipe }) => {
             <EditModal recipe={recipe}>
               <Pencil1Icon />
             </EditModal>
-            <CrossCircledIcon />
+            <CrossCircledIcon onClick={deleteRecipeHandler}/>
           </div>
         </div>
       </div>

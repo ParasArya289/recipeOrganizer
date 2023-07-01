@@ -16,7 +16,7 @@ export const Home = () => {
       <h1>All recipes</h1>
       <div className="home-recipe-container">
         {data?.map((recipe) => (
-          <RecipeCard recipe={recipe} />
+          <RecipeCard key={recipe?.id} recipe={recipe} />
         ))}
       </div>
       <AddRecipeModal>

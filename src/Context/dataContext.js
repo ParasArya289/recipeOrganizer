@@ -5,6 +5,7 @@ const dataContext = createContext();
 
 export const DataContextProvider = ({ children }) => {
   const [data, setData] = useState();
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     const retrievedRecipes = JSON.parse(localStorage.getItem("recipe"));
@@ -17,7 +18,7 @@ export const DataContextProvider = ({ children }) => {
 
   const addRecipe = (recipe) => {
     setData((prev) => {
-      const arr = [...prev, recipe];
+      const arr = [...prev, { id: prev.length + 1, ...recipe }];
       localStorage.setItem("recipe", JSON.stringify(arr));
       return arr;
     });
@@ -37,10 +38,35 @@ export const DataContextProvider = ({ children }) => {
       return arr;
     });
   };
+  const search = (keyword, searchType) => {
+    let arr = [...data];
+    if (keyword) {
+      arr = arr.filter((recipe) => {
+        if (Array.isArray(recipe[searchType])) {
+          return recipe[searchType]
+            .join("")
+            .toLowerCase()
+            .includes(keyword.toLowerCase());
+        }
+        return recipe[searchType].toLowerCase().includes(keyword.toLowerCase());
+      });
+      setFilteredData(arr);
+      return;
+    }
+    setFilteredData([]);
+  };
 
   return (
     <dataContext.Provider
-      value={{ data, setData, addRecipe, deleteRecipe, EditRecipe }}
+      value={{
+        data,
+        setData,
+        addRecipe,
+        deleteRecipe,
+        EditRecipe,
+        search,
+        filteredData,
+      }}
     >
       {children}
     </dataContext.Provider>

@@ -13,12 +13,12 @@
   gap: 10px;
   color:tomato;
 }
-.filterbar-search > input {
-  appearance: none;
-  outline: none;
-  border: none;
-  color: var(--primary-text-color);
-  border-right: 1px solid var(--primary-text-color);
+.filterbar-search > .searchbar {
+  appearance: none !important;
+  outline: none !important;
+  border: none !important;
+  color: var(--primary-text-color) !important;
+  border-right: 1px solid var(--primary-text-color) !important;
 }
 .filterbar-radio > label {
     margin-left: 10px;

@@ -9,10 +9,10 @@ import EditModal from "../EditModal/EditModal";
 import "./RecipeCard.css";
 
 export const RecipeCard = ({ recipe }) => {
-  const {deleteRecipe}  = useData();
+  const { deleteRecipe } = useData();
   const deleteRecipeHandler = () => {
-    deleteRecipe(recipe?.id)
-  }
+    deleteRecipe(recipe?.id);
+  };
   return (
     <div className="recipecard">
       <div className="recipecard-header">
@@ -22,7 +22,7 @@ export const RecipeCard = ({ recipe }) => {
             <EditModal recipe={recipe}>
               <Pencil1Icon />
             </EditModal>
-            <CrossCircledIcon onClick={deleteRecipeHandler}/>
+            <CrossCircledIcon onClick={deleteRecipeHandler} />
           </div>
         </div>
       </div>
@@ -34,11 +34,11 @@ export const RecipeCard = ({ recipe }) => {
         </div>
         <div>
           <span>Ingredients</span>
-          <Link>{"view >"}</Link>
+          <Link to={`/recipe/${recipe?.id}`}>{"view >"}</Link>
         </div>
         <div>
           <span>Instruction</span>
-          <Link>{"view >"}</Link>
+          <Link to={`/recipe/${recipe?.id}`}>{"view >"}</Link>
         </div>
       </div>
     </div>

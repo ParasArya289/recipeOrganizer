@@ -1,0 +1,46 @@
+.PopoverTrigger > input {
+  appearance: none !important;
+  outline: none !important;
+  border: none !important;
+  color: var(--primary-text-color) !important;
+  border-right: 1px solid var(--primary-text-color) !important;
+}
+
+.PopoverContent {
+  border-radius: 4px;
+  padding: 20px;
+  width: 260px;
+  margin-top: 15px;
+  margin-left: 15px;
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+  font-size: small;
+  outline: none;
+  z-index: 99;
+}
+.PopoverContent > a{
+  text-decoration: none;
+  display: block;
+  color:var(--accent-color)
+}
+.PopoverContent > hr {
+  opacity: 0.1;
+}
+.PopoverContent > div > img {
+  border-radius: 3px;
+}
+.PopoverContent > div > span {
+  margin-left: 10px;
+  font-weight: 500;
+}
+.PopoverContent > div {
+  cursor: pointer;
+}
+
+/* .PopoverContent > div:hover{
+    background-color: var(--background-blur);
+  } */
+
+.PopoverArrow {
+  fill: var(--background-blur-dark);
+}

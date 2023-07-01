@@ -1,0 +1,27 @@
+.flex-container {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+.recipe-container {
+  display: flex;
+  align-items: baseline;
+  text-align: left;
+  width: 80vw;
+  gap: 20px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+.recipe-img {
+  height: 400px;
+  width: 400px;
+  flex: 0 0 400px;
+  max-width: 100%;
+  background-color: var(--hover-color);
+}
+
+.recipe-info {
+  flex: 1;
+}

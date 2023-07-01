@@ -6,7 +6,7 @@ import "./SearchPopover.css";
 export const SearchPopover = ({ children, array, inputRef }) => {
   const [isPopoverOpen, setPopoverOpen] = useState(true);
   useEffect(() => {
-    if (array.length > 0) {
+    if (array.length > 0 && inputRef.current.value.length>0) {
       setPopoverOpen(true);
       setTimeout(() => {
         inputRef.current.focus();

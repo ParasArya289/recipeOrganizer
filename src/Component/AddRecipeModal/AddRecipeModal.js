@@ -36,21 +36,23 @@ const AddRecipeModal = ({ children }) => {
           <form ref={formRef} onSubmit={addRecipeHandler}>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="name">
-                Name
+                Name*
               </label>
               <input
                 className="Input"
                 name="name"
+                required
                 placeholder="Name of recipe"
               />
             </fieldset>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="username">
-                Cuisine
+                Cuisine*
               </label>
               <input
                 className="Input"
                 name="type"
+                required
                 placeholder="Type of cuisine e.g, American"
               />
             </fieldset>
@@ -66,21 +68,23 @@ const AddRecipeModal = ({ children }) => {
             </fieldset>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="username">
-                Ingredients
+                Ingredients*
               </label>
               <input
                 className="Input"
                 name="ingredients"
+                required
                 placeholder="Ingredients ',' separated"
               />
             </fieldset>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="username">
-                Instructions
+                Instructions*
               </label>
               <input
                 className="Input"
                 name="instructions"
+                required
                 placeholder="Instructions ',' separated"
               />
             </fieldset>

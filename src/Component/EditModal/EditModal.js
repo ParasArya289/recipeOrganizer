@@ -20,7 +20,7 @@ const EditModal = ({ children, recipe }) => {
         obj[key] = value;
       }
     }
-    EditRecipe(recipe?.id, obj);
+    EditRecipe(recipe?.id, { id: recipe?.id, ...obj });
     setOpen(false);
   };
 
@@ -37,21 +37,23 @@ const EditModal = ({ children, recipe }) => {
           <form ref={formRef} onSubmit={editRecipeHandler}>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="name">
-                Name
+                Name*
               </label>
               <input
                 className="Input"
                 name="name"
+                required
                 defaultValue={recipe?.name}
               />
             </fieldset>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="username">
-                Cuisine
+                Cuisine*
               </label>
               <input
                 className="Input"
                 name="type"
+                required
                 defaultValue={recipe?.type}
               />
             </fieldset>
@@ -67,21 +69,23 @@ const EditModal = ({ children, recipe }) => {
             </fieldset>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="username">
-                Ingredients
+                Ingredients*
               </label>
               <input
                 className="Input"
                 name="ingredients"
+                required
                 defaultValue={recipe?.ingredients}
               />
             </fieldset>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor="username">
-                Instructions
+                Instructions*
               </label>
               <input
                 className="Input"
                 name="instructions"
+                required
                 defaultValue={recipe?.instructions}
               />
             </fieldset>

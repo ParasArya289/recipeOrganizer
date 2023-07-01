@@ -3,7 +3,8 @@ export const recipes = [
     id: 1,
     name: "Classic Cheeseburger",
     type: "American",
-    image: "https://example.com/american.jpg",
+    image:
+      "https://images.pexels.com/photos/2119758/pexels-photo-2119758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ingredients: [
       "1 lb ground beef",
       "1 onion, chopped",
@@ -24,7 +25,8 @@ export const recipes = [
     id: 2,
     name: "Spaghetti Aglio e Olio",
     type: "Italian",
-    image: "https://example.com/italian.jpg",
+    image:
+      "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ingredients: [
       "8 oz spaghetti",
       "2 cloves of garlic, minced",
@@ -47,7 +49,8 @@ export const recipes = [
     id: 3,
     name: "Sweet and Sour Chicken",
     type: "Chinese",
-    image: "https://example.com/chinese.jpg",
+    image:
+      "https://images.pexels.com/photos/3386854/pexels-photo-3386854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ingredients: [
       "1 lb boneless chicken thighs, cut into small pieces",
       "2 cups of cooked rice",

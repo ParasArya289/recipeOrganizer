@@ -19,14 +19,17 @@
   width: 400px;
   flex: 0 0 400px;
   max-width: 100%;
+  border-radius: 6px;
   background-color: var(--hover-color);
 }
-.recipe-img >img{
+.recipe-img > img {
   height: 100%;
   width: 100%;
+  border-radius: 6px;
+
   object-fit: cover;
 }
 
-.recipe-info >  h5 {
+.recipe-info > h5 {
   flex: 1;
 }

@@ -1,7 +1,32 @@
 .home {
-  max-width: 90vw;
+  max-width: 98vw;
   margin: 50px auto;
 }
-.home-filterbar {
-    width: 100%;
+.home >  h1{
+  font-weight: var(--fw-regular);
+}
+/* .home-filterbar {
+} */
+.home-add {
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  background-color: var(--primary-color);
+  height: 40px;
+  width: 40px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  color: var(--accent-color);
+}
+.home-recipe-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+.home-add:hover {
+  background-color: var(--secondary-color);
 }

@@ -1,0 +1,35 @@
+.recipecard {
+  background-color: var(--primary-color);
+  margin: 10px;
+  width: 230px;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--primary-text-color);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.05);
+}
+.recipecard-img-container {
+  position: relative;
+  height: 200px;
+  background-color: var(--hover-color);
+}
+.recipecard-icon-container {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: var(--accent-color);
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.recipecard-info > div {
+  display: flex;
+  font-size: small;
+  justify-content: space-between;
+}
+.recipecard-info a {
+  text-decoration: none;
+  color: var(--accent-color);
+  color: var(--accent-color);
+}

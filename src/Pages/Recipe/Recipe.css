@@ -6,7 +6,7 @@
 }
 .recipe-container {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   text-align: left;
   width: 80vw;
   gap: 20px;
@@ -21,7 +21,12 @@
   max-width: 100%;
   background-color: var(--hover-color);
 }
+.recipe-img >img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-.recipe-info {
+.recipe-info >  h5 {
   flex: 1;
 }

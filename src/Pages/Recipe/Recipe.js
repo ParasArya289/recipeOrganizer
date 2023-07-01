@@ -10,7 +10,7 @@ export const Recipe = () => {
     <div className="flex-container">
       <div className="recipe-container">
         <div className="recipe-img">
-          <img src={foundRecipe?.image} width="400" />
+          <img src={foundRecipe?.image} />
         </div>
         <div classname="recipe-info">
           <h4 style={{color:"tomato"}} >{foundRecipe?.name}</h4>

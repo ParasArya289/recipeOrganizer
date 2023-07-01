@@ -3,12 +3,14 @@ import {
   CrossCircledIcon,
   Pencil1Icon,
 } from "@radix-ui/react-icons";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useData } from "../../Context/dataContext";
 import EditModal from "../EditModal/EditModal";
 import "./RecipeCard.css";
 
 export const RecipeCard = ({ recipe }) => {
+  const [imageLoading, setImageLoading] = useState(true);
   const { deleteRecipe } = useData();
   const deleteRecipeHandler = () => {
     deleteRecipe(recipe?.id);
@@ -17,7 +19,7 @@ export const RecipeCard = ({ recipe }) => {
     <div className="recipecard">
       <div className="recipecard-header">
         <div className="recipecard-img-container">
-          <img />
+            <img src={recipe?.image} style={{visibility:imageLoading?"hidden":""}} onLoad={() => setImageLoading(false)} />
           <div className="recipecard-icon-container">
             <EditModal recipe={recipe}>
               <Pencil1Icon />

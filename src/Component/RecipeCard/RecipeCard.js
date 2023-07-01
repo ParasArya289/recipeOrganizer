@@ -1,5 +1,10 @@
-import { Cross1Icon, CrossCircledIcon, Pencil1Icon } from "@radix-ui/react-icons";
+import {
+  Cross1Icon,
+  CrossCircledIcon,
+  Pencil1Icon,
+} from "@radix-ui/react-icons";
 import { Link } from "react-router-dom";
+import EditModal from "../EditModal/EditModal";
 import "./RecipeCard.css";
 
 export const RecipeCard = ({ recipe }) => {
@@ -8,10 +13,12 @@ export const RecipeCard = ({ recipe }) => {
       <div className="recipecard-header">
         <div className="recipecard-img-container">
           <img />
-        <div className="recipecard-icon-container">
-            <Pencil1Icon/>
-            <CrossCircledIcon/>
-        </div>
+          <div className="recipecard-icon-container">
+            <EditModal recipe={recipe}>
+              <Pencil1Icon />
+            </EditModal>
+            <CrossCircledIcon />
+          </div>
         </div>
       </div>
       <div className="recipecard-info">

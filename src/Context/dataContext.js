@@ -6,10 +6,13 @@ const dataContext = createContext();
 export const DataContextProvider = ({ children }) => {
   const [data, setData] = useState([...recipes]);
 
-  useEffect(()=>{
-    const recipes = localStorage.getItem("recipe")
-    setData(JSON.parse(recipes))
-  },[])
+  useEffect(() => {
+    const retrievedRecipes = JSON.parse(localStorage.getItem("recipe"));
+    if (retrievedRecipes) {
+      setData(retrievedRecipes);
+      return;
+    }
+  }, []);
   const addRecipe = (recipe) => {
     setData((prev) => [...prev, recipe]);
     localStorage.setItem("recipe", JSON.stringify(data));

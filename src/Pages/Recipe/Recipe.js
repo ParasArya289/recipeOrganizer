@@ -14,7 +14,7 @@ export const Recipe = () => {
         <div className="recipe-img">
           <img src={foundRecipe?.image} style={{visibility:imageLoading?"hidden":""}} onLoad={()=>setImageLoading(false)}/>
         </div>
-        <div classname="recipe-info">
+        <div className="recipe-info">
           <h4 style={{color:"tomato"}} >{foundRecipe?.name}</h4>
           <p>Cuisine: {foundRecipe?.type}</p>
           <p>Ingredients: {foundRecipe?.ingredients}</p>

@@ -19,7 +19,7 @@ export const RecipeCard = ({ recipe }) => {
     <div className="recipecard">
       <div className="recipecard-header">
         <div className="recipecard-img-container">
-            <img src={recipe?.image} style={{visibility:imageLoading?"hidden":""}} onLoad={() => setImageLoading(false)} />
+           {recipe?.image&&<img src={recipe?.image} style={{visibility:recipe?.image && imageLoading?"hidden":""}} onLoad={() => setImageLoading(false)}/>}
           <div className="recipecard-icon-container">
             <EditModal recipe={recipe}>
               <Pencil1Icon />

@@ -16,10 +16,11 @@ const EditModal = ({ children, recipe }) => {
     for (const [key, value] of formdata.entries()) {
       if (key === "ingredients" || key === "instructions") {
         obj[key] = value.split(",");
-      } else {
+      }else {
         obj[key] = value;
       }
     }
+    console.log(obj)
     EditRecipe(recipe?.id, { id: recipe?.id, ...obj });
     setOpen(false);
   };
